@@ -1,0 +1,5 @@
+on: [push]
+
+jobs:
+  workflow_call_hello:
+    uses: spring-petclinic/.github/workflows/hello-template.yaml 

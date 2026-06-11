@@ -1,0 +1,12 @@
+jobs:
+  hello_template:
+    runs-on: ubuntu-latest
+    name: Hello with a re use workflow
+    steps:
+      input:
+        user_name:
+          description: "Who to greet"
+          required: true
+          default: 'Mona'
+      output:
+        value: 'Bonjour ${{ input.who-to-greet }} depuis le workflow réutilisable'
