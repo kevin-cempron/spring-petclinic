@@ -1,5 +1,14 @@
-on: [push]
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  workflow_call_hello:
-    uses: spring-petclinic/.github/workflows/hello-template.yaml 
+  call-hello-template:
+    uses: ./.github/workflows/hello-template.yml
+    with:
+      username: Mona

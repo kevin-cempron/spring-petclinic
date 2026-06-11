@@ -1,12 +1,16 @@
+name: Hello Template
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        description: "Nom de la personne à saluer"
+        required: true
+        type: string
+
 jobs:
-  hello_template:
+  say-hello:
     runs-on: ubuntu-latest
-    name: Hello with a re use workflow
     steps:
-      input:
-        user_name:
-          description: "Who to greet"
-          required: true
-          default: 'Mona'
-      output:
-        value: 'Bonjour ${{ input.who-to-greet }} depuis le workflow réutilisable'
+      - name: Dire bonjour
+        run: echo "Bonjour ${{ inputs.username }} depuis le workflow réutilisable !"
